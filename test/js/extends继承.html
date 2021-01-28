@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//父类
+	class A{
+		constructor(){
+			this.age = 30;
+		}
+		say(){
+			console.log('俺是驴');
+		}
+	}
+
+	//子类
+	class B extends A{
+		constructor(){
+			//函数形式的super() 表示调用父类的构造方法
+			//如果子类定义了构造方法(使用了this)，必须先调用super()
+			super();
+			this.sex = '女';
+		}
+		say(){
+			console.log('俺是！！')
+		}
+	}
+
+	//实例化子类得到子对象
+	var obj = new B();
+	obj.say();
+	console.log(obj.age);
+	</script>
+</body>
+</html>

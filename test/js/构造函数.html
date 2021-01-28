@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var obj = {
+		"fn":function(){
+			console.log('我叫' + this.name);
+		},
+		"fn2":function(){
+			console.log('起飞');
+		}
+	}
+	function Person(n,a){
+		this.name = n;
+		this.age = a;
+		this.say = obj.fn;
+		this.fly = obj.fn2;
+	}
+
+	// var person1 = new Person('李大帅',20);
+	// var person2 = new Person('王二麻子',30);
+	// console.log(person1);
+	// console.log(person2);
+	// 
+	var obj2 = {
+		"fn":function(){
+			console.log('我叫' + this.name);
+		},
+		"fn2":function(){
+			console('着陆');
+		}
+	}
+	function Animal(n,a){
+		this.name = n;
+		this.age = a;
+		this.say = obj2.fn;
+		this.fly = obj2.fn2;
+	}
+	</script>
+</body>
+</html>

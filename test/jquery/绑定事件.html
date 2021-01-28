@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<input type="button" id="btn" value="点你妈">
+	<input type="text" id="int">
+
+	<script>
+		// document.getElementById('btn').onclick = function(){
+		// 	console.log('11');
+		// }
+		
+		$("#btn").click(function(){
+			console.log('11');
+		})
+		
+		$('input').mouseover(function(){
+			console.log('鸡儿');
+		})
+
+		$("#int").blur(function(){
+			console.log($('#int').val());
+			$("#int").val('dadada');
+		})
+	</script>
+</body>
+</html>

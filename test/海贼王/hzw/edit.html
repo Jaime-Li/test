@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改</title>
+    <style>
+        table,table tr th, table tr td { border:1px solid #ccc; }
+        table{
+            width: 600px;border-collapse: collapse;margin:0 auto;
+            border:1px solid #ccc;
+        }
+        tr td:first-child{width: 150px;}
+        tr{height: 80px;}
+        img{height: 75px;}
+    </style>
+</head>
+<body>
+    <form action="/edit?id={{data.id}}" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td><input type="text" name="name" value="{{data.name}}"></td>
+            </tr>
+            <tr>
+                <td>能力：</td>
+                <td><input type="text" name="power" value="{{data.power}}"></td>
+            </tr>
+            <tr>
+                <td>团队：</td>
+                <td><input type="text" name="team" value="{{data.team}}"></td>
+            </tr>
+            <tr>
+                <td>上传图片：</td>
+                <td><input type="file" name="img"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="确认修改"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

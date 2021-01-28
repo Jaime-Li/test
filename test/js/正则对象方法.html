@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//test方法
+	var str = 'php112js43';
+	var pattern = /^[a-z]/;	//以小写字母开头
+	var res = pattern.test(str);	//匹配字符串是否以小写字母开头
+	console.log(res);
+	if(res){
+		console.log('格式正确');
+	}else{
+		console.log('格式错误');
+	}
+
+
+	//exec方法
+	var str = 'php112js43';
+	var pattern = /^[a-z]/;	//以小写字母开头
+	// var pattern = /^[a-z]/g;
+	
+	var res = pattern.exec(str);	//匹配字符串是否以小写字母开头
+	console.log(res);
+
+	//如果多次执行exec，则全局修饰符 g 会生效，每次匹配，是从上一次匹配结束的位置开始
+	var res2 = pattern.exec(str);
+	console.log(res2);
+	</script>
+</body>
+</html>

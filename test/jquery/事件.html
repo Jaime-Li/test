@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<div id="btns">
+		<input type="button" class="btn" value="点我">
+		<input type="button" class="btn" value="点你妈">
+	</div>
+
+	<!-- <script>
+		$(function(){
+			$('.btn').click(function(){
+				alert('你妈的~');
+			});
+
+			//向div中增加一个input
+			console.log($('#btns')[0]);
+			// $("#btns")[0].appendChild();
+			$("#btns")[0].appendChild($('.btn')[0].cloneNode());
+
+			var input4 = $(".btn")[0].cloneNode();
+			input4.value = '点个鸡儿';
+			$("#btns")[0].appendChild(input4);
+
+			//使用innerHTML 重新替换内容，会将事件丢失
+			//后来通过js向页面追加的元素，普通方式绑定的事件不生效
+		})
+	</script> -->
+
+	<script>
+	$(function(){
+		// $(".btn").on('click',function(){
+		// 	alert('点个鸡儿');
+		// })
+		
+		//on方法委托事件
+		//通过现有的祖先元素，给其后代元素绑定事件
+		//对未来元素生效（通过js追加到页面）
+		$("#btns").on('click','.btn',function(){
+			alert('点个鸡儿');
+		})
+
+			var input4 = $(".btn")[0].cloneNode();
+			input4.value = '点个鸡儿';
+			$("#btns")[0].appendChild(input4);
+	})
+	</script>
+
+	<script>
+		$(function(){
+			//解绑事件	off方法
+			//在绑定事件之前，调用off方法，解绑之前的事件
+			$(".btn").off('click').on('click',function(){
+				alert('新来的鸡儿');
+			})
+		})
+	</script>
+</body>
+</html> 

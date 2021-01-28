@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<img src="../img/01.jpg" id="img" title="举个栗子" data="100" alt="">
+
+	<script>
+	$(function(){
+		//获取属性
+		console.log($("#img").attr('id'));
+		console.log($("#img").attr('title'));
+
+		//设置属性
+		// $("img").attr('id','aaa');
+		// $("img").attr('title','举两个栗子');
+
+		//批量设置
+		$("img").attr({
+			"id":"bbb",
+			"title":"举三个栗子",
+		})
+
+		//移除属性
+		$('img').removeAttr('data');
+
+		//设置和移除时，方法返回值
+		console.log($("img").attr('id','ccc'));
+	})
+	</script>
+
+	<input type="checkbox" checked="checked" id="sex1" name="sex" value="">男
+	<input type="checkbox" id="sex2" name="sex" value="">女
+
+	<script>
+	$(function(){
+		console.log($("#sex1").attr('checked'));
+		console.log($("#sex1").prop('checked'));
+
+		console.log($("#sex2").attr('checked'));
+		console.log($("#sex2").prop('checked',true));
+	})
+	</script>
+</body>
+</html>

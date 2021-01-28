@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<img src="../img/01.jpg" alt="" title="img1">
+	<img src="../img/01.jpg" alt="" title="img2">
+	<img src="../img/01.jpg" alt="" title="img3">
+	<img src="../img/01.jpg" alt="" title="img4">
+	<img src="../img/01.jpg" alt="" title="img5">
+
+	<script>
+	$(function(){
+		//直接遍历jq对象	$('选择器').each(function(i,v){})
+		$('img').each(function(i,v){
+			//i是下标，v是遍历值	dom对象
+			console.log(i,v);
+			//获取每一个标签的title属性
+			console.log($(v).attr('title'));
+		});
+
+		//遍历数组或对象	$.each(数组或对象,function(i,v){})
+		var arr = [3,4,5,6,7,7];
+		$.each(arr,function(i,v){
+			console.log(i,v);
+		});
+
+		//遍历对象
+		$.each($('img'),function(i,v){
+			console.log(i,v);
+			console.log($(v).attr('title'));
+		})
+	})
+	</script>
+</body>
+</html>

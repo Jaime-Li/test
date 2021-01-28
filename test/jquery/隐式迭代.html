@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<img src="../img/01.jpg" alt="">
+	<img src="../img/01.jpg" alt="">
+	<img src="../img/01.jpg" alt="">
+	<img src="../img/01.jpg" alt="">
+	<img src="../img/01.jpg" alt="">
+
+	<script>
+	$(function(){
+		//设置值，会给所有标签设置
+		$('img').attr('title','jjjj');
+
+
+		//获取标签，val() attr() html() text()
+		//只返回第一个值
+		console.log($('img'));
+		console.log($('img').attr('title'));
+
+
+		//获取所有值  需要遍历
+		for(var i=0;i<$('img').length;i++){
+			console.log($($('img')[i]).attr('title'));
+			//相同
+			console.log($('img').eq(i).attr('title'));
+		}
+	})
+	</script>
+</body>
+</html>

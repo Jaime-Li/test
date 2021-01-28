@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//ES5
+	function f(a){
+		return a;
+	}
+	console.log(f(100));
+
+	//ES6
+	var f1 = a =>a;
+	console.log(typeof f1);
+	console.log(f1(100));
+
+	var f2 = () => '席巴';
+	console.log(f2());
+
+	var f3 = (a,b) => a + b;
+	console.log(f3(2,4));
+
+	//返回对象时要用小括号括起来
+	var f4 = () => {
+		return ({"name":"小李子","age":22})
+	}
+	console.log(f4());
+	</script>
+</body>
+</html>

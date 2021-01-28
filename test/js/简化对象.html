@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//ES5语法
+	var age = 30;
+	var sex = "男";
+	var name = "张三";
+	var obj1 = {
+		"age":age,
+		"sex":sex,
+		"name":name
+	}
+	console.log(obj1);
+	//ES6语法,属性值直接对应变量
+	var obj2 = {
+		age,
+		sex,
+		name
+	}
+	console.log(obj2);
+
+	var team = ["大威天龙","世尊地藏","般若诸佛","般若叭麻吽"]
+	for(var v of team){
+		console.log(v);
+	}
+
+	var obj = {"name":"张三","age":30,"sex":"男"}
+	for(var v in obj){
+		console.log(v,obj[v]);
+	}
+
+	</script>
+</body>
+</html>

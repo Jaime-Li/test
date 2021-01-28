@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//设置默认值	对整个解构数组设置默认值
+	function f1([m,n,i] = []){
+		console.log(m,n,i);
+	}
+	f1([3,4,5]);
+	f1();
+
+	//对整个解构数组中每一个变量设置默认值
+	function f2([m,n,i] = [1,2,3]){
+		console.log(m,n,i);
+	}
+	f2([7,8,9]);
+	f2();
+
+	function f2([m=1,n=2,i=3] = []){
+		console.log(m,n,i);
+	}
+	f2([7,8,9]);
+	f2();
+	</script>
+
+	<script>
+	//函数的参数与对象解构
+	// var {age,sex,say} = {"age":30,"sex":"男","say":function(){return "hello";}};
+	// var {age,sex,say} = obj;
+	function f1({age,sex,say}){
+		console.log(age,sex,say);
+	}
+	var obj = {"age":30,"sex":"男","say":function(){return "hello";}};
+	f1(obj);
+
+
+	//设置默认值
+	function f2({age,sex,say} = {}){
+		console.log(age,sex,say);
+	}
+	var obj = {"age":30,"sex":"男","say":function(){return "hello";}};
+	f2(obj);
+	f2();
+
+	function f3({age,sex,say} = {"age":20,"sex":"女"}){
+		console.log(age,sex,say);
+	}
+	var obj = {"age":30,"sex":"男","say":function(){return "hello";}};
+	f3(obj);
+	f3();
+	</script>
+</body>
+</html>

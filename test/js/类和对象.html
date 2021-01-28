@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//使用class关键字,实例化得到对象
+	class A{
+		//构造方法
+		constructor(){
+			//在构造方法中定义属性
+			this.age = 30;
+		}
+		//实例方法
+		say(){
+			console.log('俺是个憨憨');
+		}
+
+		//静态方法:不需要实例化对象，可以直接使用类名.方法() 调用
+		static codeing(){
+			console.log('俺是头大蠢驴' + this.age)
+		}
+		static say(){
+			console.log('静态方法say');
+		}
+	}
+	var obj = new A();
+	//实例化类，会自动调用构造函数，并得到实例对象
+	console.log(obj);
+	console.log(obj.age);
+	obj.say();
+
+	//调用静态方法
+	A.codeing();
+	A.say();
+	</script>
+</body>
+</html>

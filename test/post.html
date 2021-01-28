@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <style>
+        ul{list-style: none}
+        li{display: inline-block;width: 50px;height: 30px}
+        .a{color: red}
+        .dd{width: 400px;height: 300px;border:1px solid #ccc;}
+        .dd div{width: 400px;height: 300px;border:1px solid #ccc;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="a">aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+    </ul>
+    <div class="dd">
+        <div>aaaaaaaaaaaaaaaa</div>
+        <div>dadbbbbbbbbbbas</div>
+        <div>ccccccccc</div>
+        <div>dddddddddddd</div>
+    </div>
+
+    <script>
+        $('.dd div').hide();
+        $('.dd div').eq(0).show();
+        $('li').mouseover(function(){
+            $(this).addClass('a').siblings().removeClass('a');
+            let a = $(this).index();
+            $('.dd div').eq(a).show().siblings().hide();
+        })
+    </script>
+</body>
+</html>
+

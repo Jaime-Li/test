@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//symbol 独一无二的值
+	var symbol1 = Symbol();
+
+	var symbol2 = Symbol("A");
+
+	console.log(symbol1,symbol2);
+
+	var obj = {
+		"age":40,
+		"sex":"男",
+		[Symbol()]:"100";
+	}
+	obj[Symbol()]
+	</script>
+</body>
+</html>

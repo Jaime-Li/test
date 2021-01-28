@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+	<style>
+		div{width: 500px;height: 300px;margin:50px auto;border:1px solid #ccc;padding:15px;}
+		#err{color: red}
+		#phone{width: 250px;height: 30px;}
+		#btn{display: block;margin:20px auto;width: 50px;height: 30px;}
+		#code{width: 180px;height: 30px;}
+		li{margin-top: 10px}
+	</style>
+</head>
+<body>
+	<div>
+		<li>
+			<label for="">手机号码：</label>
+			<input type="text" id="phone" placeholder="请输入手机号码">
+			<span id="err"></span>
+		</li>
+		<li>
+			<label for="">验证码：</label>
+			<input type="text" id="code" placeholder="请输入验证码">
+		</li>
+		
+		<input type="button" id="btn" value="注册">
+	</div>
+
+	<script>
+	//定义页面加载事件
+	$(function(){
+		$("#btn").click(function(){
+			var tel = /^1(3[0-9]|4[579]|5[0-3,5-9]|66|7[0135678]|8[0-9]|9[89])\d{8}$/;
+			var flag = true;
+			var phone = $("#phone").val();
+			if(!phone){
+				$("#phone").next().html('手机号码不能为空');
+				flag = false;
+			}else if(!tel.test(phone)){
+				$("#phone").next().html('手机号码格式错误');
+				flag = false;
+			}else{
+				$("#phone").next().html('yes');
+				flag = true;
+			}
+		})
+	})
+	</script>
+</body>
+</html>

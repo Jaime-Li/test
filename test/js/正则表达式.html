@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var str = 'php';
+	var result = str.match(/p/);
+
+	var result1 = str.match(/p/g);
+
+	console.log(result);
+	console.log(result1);
+
+	//限定符
+	var str2 = 'phpphph';
+	var res = str2.match(/p+/g); //匹配所有一个或多个连在一起的p
+	console.log(res);	//['p','pp','p']
+	var res = str2.match(/p{2}/g);	//匹配所有的一个p或者多个连在一起的p
+	console.log(res);	//['pp']
+
+	var res = str2.match(/p*/g);	//匹配所有一个p或者多个连在一起的p
+	console.log(res);	//['p','pp','p']
+	var res = str2.match(/p?/g);	//匹配所有的一个p或者多个连在一起的p
+	console.log(res);	//['p','pp','p']
+
+	//等价符
+	var str3 = 'php122js344';
+	var res = str3.match(/\d+/g);	//匹配所有数字
+	console.log(res);	//['122','344']
+
+	var str4 = 'php1!js22';
+	var res = str4.match(/\w+/g);	//匹配所有数字
+	console.log(res);	//['php1','js22']
+	</script>
+
+	<script>
+	//定位符
+	var str5 = '1234';
+	var res = str5.match(/^\d+$/);	//匹配整个数字字符串
+	console.log(res);
+
+	//字符簇
+	var str = 'abcd1234ABCD';
+	var res = str.match(/[a-z]+/g);	//匹配所有小写字符串
+	var res = str.match(/[A-Z]+/g);	//匹配所有大写字符串
+	var res = str.match(/[0-9]+/g);	//匹配所有数字
+	console.log(res);	//['abcd']
+
+	//修饰符
+	var str = 'abcd1234ABCD';
+	var res = str.match(/[a-z]+/gi);	//匹配所有字母字符串（不区分大小写）
+	console.log(res);	//['abcd','ABCD']
+
+	//多行匹配m修饰符
+	var str = '1234\r\n5678';
+	console.log(str);
+	var res = str.match(/^\d+$/gm);	//匹配整个数字字符串
+	console.log(res);	//['1234','5678']
+
+	//转义符
+	var str = 'php.php';	//目标字符串中包含普通字符串
+	var res = str.match(/p\.p/g);	//匹配普通字符串，需要转义
+	console.log(res);	//['p.p']
+
+	//匹配图片后缀
+	var str = '12345.jpg';
+	var str = '12da45.png';
+	var res = str.match(/.+\.(jpg|png)$/);	//.表示任意字符，\.表示字符.
+	console.log(res);
+	</script>
+
+	<script>
+	var str = '123acdcv456vdvf789';
+	// var res = str.match(/^\d+/);
+	// var res = str.match(/\d+$/g);
+	var res = str.match(/(^\d+)|(\d+$)/g);
+	console.log(res);
+	</script>
+</body>
+</html>

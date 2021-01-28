@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bor{width: 800px;margin:0 auto}
+        div{width: 500px;margin:0 auto;text-align: center;}
+        .add{display: block;width: 80px;height: 40px;border-radius: 10px;
+            background:green;line-height: 40px;font-size: 16px;
+            text-align: center;color: honeydew;}
+        table{width: 800px;margin:0 auto}
+        thead{border-bottom: 2px solid greenyellow;}
+        th{text-align: center;border-bottom: 2px solid greenyellow;
+            height: 45px;width: 50px;color:black;font-size: 18px;}
+        
+        td{height: 50px;width: 70px;border-bottom: 1px solid #ccc;}
+        a{color: skyblue;text-decoration: none;}
+        img{height: 45px;}
+        tr:hover{background:#eee;}
+    </style>
+</head>
+<body>
+    <div class="bor">
+        <div>
+            <h1>角色管理界面</h1>
+        </div>
+        <a href="#" class="add">添加角色</a>
+        <table>
+            <thead>
+                <th>编号</th>
+                <th>名称</th>
+                <th>能力</th>
+                <th>团队</th>
+                <th>头像</th>
+                <th>操作</th>
+            </thead>
+            <tbody id="tbody">
+                {{each data}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.power}}</td>
+                    <td>{{$value.team}}</td>
+                    <td><img src="{{$value.img}}" alt=""></td>
+                    <td>
+                        <a href="/getone?id={{$value.id}}">查看</a>
+                        <a href="/edituser?id={{$value.id}}">修改</a>
+                        <a href="/del?id={{$value.id}}">删除</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

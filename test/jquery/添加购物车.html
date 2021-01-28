@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+	<style>
+		div{font-size: 18px;text-align: center}
+		.box{width: 124px;height: 80px;}
+		#aa{width: 80px;height: 80px;float: left;border: 1px solid #ccc;border-right: none;line-height: 80px;}
+		#plus{width: 40px;height: 40px;float: right;border:1px solid #eee;line-height: 40px;}
+		#inc{width: 40px;height: 40px;float: right;border:1px solid #eee;line-height: 40px;}
+
+		ul{list-style: none}
+		/*.shopcar{width: 500px;height: 120px;border:1px solid #ccc;}*/
+		li{width: 300px;height: 40px;border:1px solid #ccc;line-height: 40px;text-align: center}
+		.num{width: 50px;height: 35px;float: left;text-align: center}
+		.dic{width: 25px;height: 35px;float: left;}
+		.add{width: 25px;height: 35px;float: right;}
+		.money{width: 45px;height: 35px;float: right;border:1px solid #ccc;text-align: center;font-size: 14px;}
+		.choose{float: left;line-height: 40px;}
+		.all{float: left;}
+		.count{float: left}
+		.heji{width: 110px;height:36px;float: right;border:1px solid #eee;font-size:12px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="aa">1</div>
+		<div id="plus">+</div>
+		<div id="inc">-</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div class="shopcar">
+		<input type="checkbox" class="all">
+		<label for="">全选</label>
+		<ul>
+			<li>
+				<input type="checkbox" class="choose">
+				<div class="dic">-</div>
+				<input type="text" class="num" value="1" disabled>
+				<div class="heji"><p>小计：</p><span class="xiaoji"></span></div>
+				<div class="money">8848</div>
+				<div class="add">+</div>
+				
+			</li>
+			<li>
+				<input type="checkbox" class="choose">
+				<div class="dic">-</div>
+				<input type="text" class="num" value="1" disabled>
+				<div class="heji"><p>小计：</p><span class="xiaoji"></span></div>
+				<div class="money">2222</div>
+				<div class="add">+</div>
+			</li>
+			<li>
+				<input type="checkbox" class="choose">
+				<div class="dic">-</div>
+				<input type="text" class="num" value="1" disabled>
+				<div class="heji"><p>小计：</p><span class="xiaoji"></span></div>
+				<div class="money">3333</div>
+				<div class="add">+</div>
+			</li>
+		</ul>
+		<div class="count">
+			<p>总计：<span class="number"></span></p>
+			<p>合计：<span class="con">0</span></p>
+		</div>
+	</div>
+
+	<script>
+		$(function(){
+			$("#plus").click(function(){
+				var plus = parseInt($("#aa").html());
+				plus += 1;
+				$("#aa").html(plus);
+			})
+			$("#inc").click(function(){
+				var inc = parseInt($("#aa").html());
+				if(inc == 1)	return;
+				
+				inc -= 1;
+				$("#aa").html(inc);
+			})
+		})
+	</script>
+
+	<script>
+		$(function(){
+			$(".dic").click(function(){
+				var num = parseInt($(this).parent().find('.num').val());
+				if(num == 1) return;
+				num -= 1;
+				$(this).parent().find('.num').val(num);
+
+				var money = parseFloat($(this).parent().find('.money').html());
+				var count = money / num;
+				$(this).parent().find('.money').html(count);
+
+				//需要重新计算已选商品的数量和金额
+				change_total();
+			})
+
+			$(".add").click(function(){
+				var num = parseInt($(this).parent().find('.num').val());
+				num += 1;
+				$(this).parent().find('.num').val(num);
+
+				var money = parseFloat($(this).parent().find('.money').html());
+				var count = money * num;
+				$(this).parent().find('.money').html(count);
+
+				//需要重新计算已选商品的数量和金额
+				change_total();
+			})
+
+			$(".all").change(function(){
+				//获取全选的checked属性，选中状态
+				//prop方法：
+				//		传一个属性名名称，表示获取值
+				//		传一个名称一个值，表示设置
+				var status = $(this).prop('checked');
+				$(".choose").prop('checked',status);
+
+				//需要重新计算已选商品的数量和金额
+				change_total();
+			})
+
+			//每一行的checkbox 影响全选状态
+			//给每一行的checked绑定事件	change
+			$(".choose").change(function(){
+				//判断 所有行数，选中的行数是否相等
+				var total = $(".choose").length;
+				//选中的行数
+				var checked = $('.choose:checked').length;
+				//status:true  false
+				var status = total == checked;
+				//相等全选就选中，否则不选	
+				$(".all").prop('checked',status);
+
+				//需要重新计算已选商品的数量和金额
+				change_total();
+			});
+
+			//需要重新计算已选商品的数量和金额
+			function change_total(){
+				//获取所有选中的行的checkbox
+				//遍历，根据每个选中的checkbox，获取当前行的数量
+				var total_number = 0;
+				var total_price = 0;
+				$('.choose:checked').each(function(i,v){
+					//i是下标，v是一个checkbox标签，是dom对象
+					//根据每个选中的checkbox，获取当前行的数量
+					var number = parseInt($(v).closest('li').find('.num').val());
+					//累加数量
+					total_number += number;
+					//根据每个选中的checkbox，获取当前行的小计金额;
+					var row_price = parseInt($(v).closest('li').find('.money').html());
+					//累加小计金额
+					total_price += row_price;
+					console.log(total_number,total_price);
+				})
+				//将累加数量和金额放到指定位置
+				$('.number').html(total_number + '件');
+				$('.con').html('￥' + total_price);
+				
+			}
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮1" id="btn1">
+    <input type="button" value="按钮2" id="btn2">
+    <input type="button" value="按钮3" id="btn3">
+
+    <script>
+        var ajax = {
+            getxhr:function(){
+                return new XMLHttpRequest();
+            },
+            get:function(url,sync=true,fun){
+                var xhr = this.getxhr();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        fun(xhr.responseText);
+                    }
+                }
+                xhr.open('get',url,sync);
+                xhr.send(data);
+            },
+            post:function(url,data,sync=true,fun){
+                var xhr = this.getxhr();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        fun(xhr.responseText);
+                    }
+                }
+                xhr.open('post',url,sync);
+                xhr.send(data);
+            }
+        }
+        
+        document.getElementById('btn1').onclick = function(){
+            function f2(data){
+                alert(data);
+            }
+            // ajax.get('http://127.0.0.1:8080/gets',true,f2);
+
+            ajax.post('http://127.0.0.1:8080/posts','name=names',true,f2);
+        }
+    </script>
+</body>
+</html>

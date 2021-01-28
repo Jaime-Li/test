@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<input type="button" value="走起" id="btn">
+	<img src="../img/01.ico" alt="" id="img" style="position: absolute;">
+	
+
+	<script>
+	var btn = document.getElementById('btn');
+
+	btn.onclick = function(){
+		window.onmousemove = function(e){
+			console.log(e);
+			var e = e || window.event;
+
+			var x = e.pageX - img.offsetWidth/2;
+			var y = e.pageY - img.offsetHeight/2;
+
+			document.getElementById('img').style.left = x + 'px';
+			document.getElementById('img').style.top = y + 'px';
+		}
+	}
+	</script>
+</body>
+</html>

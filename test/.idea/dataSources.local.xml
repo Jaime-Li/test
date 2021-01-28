@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="安徽" uuid="868545cb-57c9-4202-a055-dd0e8b40a077">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>ahjszgw_com</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js</title>
+    <link rel="shortcut icon" type="images/x-icon" href="../img/01.ico">
+</head>
+<body>
+<script>
+    document.write("<table border='1px'>");
+    for (var i=1;i<=9;i++){
+        document.write("<tr>")
+        for(var j=1;j<=i;j++){
+            document.write("<td>")
+            document.write(j + "*" + i + "=" + i*j +  "  ");
+            document.write("</td>")
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>");
+</script>
+<hr>
+<script>
+for(var i=1;i<=5;i++){
+    for(var j=1;j<=5-i;j++){
+        document.write("&nbsp;&nbsp;&nbsp;");
+    }
+    for(var k=1;k<=i*2-1;k++){
+        document.write("☆");
+    }
+    document.write("<br>");
+}
+</script>
+
+<script>
+    var str = '2020-11-11';
+    var time = new Date(str);
+    // var then = new Date(str.substr(0,4) + "-" + str.substr(4,2) + "-" + str.substr(6,2));
+    var finalTime = Math.ceil((then - Date.now())/(1000*60*60*24)).toString();
+    // var final = Math.ceil((time - Date.now())/(1000*60*60*24));
+
+    console.log(final);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style="width: 150px;height: 100px;position: relative">
+		<input type="" name="" value="1" id="num" style="width: 98px;height: 98px;border: 1px solid #ccc">
+		<div id="add" style="width: 50px;height: 50px;border: 1px solid #ccc;background: #eee;position: absolute;right: 0px;top: 0px">+</div>
+		<div id="dec" style="width: 50px;height: 50px;border: 1px solid #ccc;background: #eee;position: absolute;right: 0px;bottom: 0px">-</div>
+	</div>
+
+	<script>
+		console.log(Math.random()*100);
+
+
+		var input = document.getElementById('num');
+		var num = parseInt(input.value);
+		document.getElementById("add").onclick = function(e){
+			num++;
+			input.value = num;
+			console.log(e)
+		}
+
+		document.getElementById('dec').onclick = function(){
+			if(num == 1){
+				return;
+			}
+			
+			num--;
+			input.value = num;
+		}
+
+	</script>
+
+</body>
+</html>

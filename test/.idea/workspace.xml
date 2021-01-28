@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac240884-62e3-4381-86bf-c8908da63201" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i4ifr2Lb7Iq9RTROfqEYAqtmM5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jxpc" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac240884-62e3-4381-86bf-c8908da63201" name="默认的" comment="" />
+      <created>1601173370793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601173370793</updated>
+      <workItem from="1601173371880" duration="1199000" />
+      <workItem from="1601185908233" duration="597000" />
+      <workItem from="1601253460469" duration="2180000" />
+      <workItem from="1601263380554" duration="10298000" />
+      <workItem from="1601340197777" duration="2399000" />
+      <workItem from="1601358536394" duration="1205000" />
+      <workItem from="1601426984767" duration="974000" />
+      <workItem from="1601445339030" duration="5252000" />
+      <workItem from="1602203614245" duration="4602000" />
+      <workItem from="1602211630512" duration="79000" />
+      <workItem from="1602213866210" duration="2456000" />
+      <workItem from="1602463038252" duration="598000" />
+      <workItem from="1602481608109" duration="4026000" />
+      <workItem from="1602549300700" duration="22101000" />
+      <workItem from="1602635990368" duration="220000" />
+      <workItem from="1604298847976" duration="387000" />
+      <workItem from="1604365702023" duration="711000" />
+      <workItem from="1604451429987" duration="7000" />
+      <workItem from="1604646961641" duration="473000" />
+      <workItem from="1606283929029" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602554201180">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602554201180" />
+    <state x="552" y="178" key="#部署" timestamp="1602550862352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#部署/0.0.1920.1040@0.0.1920.1040" timestamp="1602550862352" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602574889344">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602574889344" />
+    <state x="785" y="443" key="NewPhpFileDialog" timestamp="1601281569374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="785" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601281569374" />
+    <state x="831" y="418" key="WebDeployment.AddServerDialog.v.1" timestamp="1602488492598">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="831" y="418" key="WebDeployment.AddServerDialog.v.1/0.0.1920.1040@0.0.1920.1040" timestamp="1602488492598" />
+  </component>
+</project>

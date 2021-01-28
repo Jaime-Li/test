@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Person(n,a){
+		this.name = n;
+		this.age = a;
+	}
+
+	console.log(Person.prototype);
+
+	Person.prototype.say = function(){
+		console.log('我叫' + this.name + ', 我特么' + this.age + '了');
+	}
+
+
+	var person1 = new Person('李大帅',20);
+	var person2 = new Person('张大麻子',30);
+
+	person1.say();
+	person2.say();
+	</script>
+</body>
+</html>

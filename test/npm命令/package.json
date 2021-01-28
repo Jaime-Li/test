@@ -1,0 +1,15 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "李大帅的项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "李大帅",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1"
+  }
+}

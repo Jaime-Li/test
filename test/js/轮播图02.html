@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+		}
+		.imgs{
+			width: 500px;
+			height: 300px;
+			overflow: hidden;
+		}
+		.dots{
+			width: 164px;
+			position: absolute;
+			left: 220px;
+			top: 270px;
+			z-index: 999;
+		}
+		.dot{
+			width: 10px;
+			height: 10px;
+			border:2px solid #fff;
+			border-radius: 10px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="sq">
+		<ul class="imgs" id="imgs">
+			<li class="img">
+				<img src="../img/01.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/02.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/03.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/04.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/05.jpg" alt="">
+			</li>
+		</ul>
+		<ul class="dots">
+			<li class="dot" style="background-color: #fff"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+		</ul>
+	</div>
+
+	<script>
+	
+	var img = document.querySelectorAll('.img');
+	var dot = document.querySelectorAll('.dot');
+
+	function change(n){
+		for(var i=0;i<img.length;i++){
+			img[i].style.display = 'none';
+			dot[i].style.backgroundColor = '';
+		}
+		img[n].style.display = 'block';
+		dot[n].style.backgroundColor = 'white';
+	}
+
+	var num = 0;
+
+	var timer;
+	function setTimer(){
+			timer = setInterval(function(){
+				num++;
+				if(num == img.length){
+					num = 0;
+				}
+				change(num);
+		},1000)
+	}
+	setTimer();
+
+	for(var i=0;i<dot.length;i++){
+		(function(i){
+				dot[i].onmouseover = function(){
+					//鼠标定位暂停定时器
+					clearInterval(timer);
+					change(i);
+					//鼠标离开，图片接着当前图片后面走
+					num = i;
+			}
+			//鼠标离开重新启动定时器
+			dot[i].onmouseout = function(){
+				setTimer();
+			}
+		})(i)
+	}
+
+	</script>
+</body>
+</html>

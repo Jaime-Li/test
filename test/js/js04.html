@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<input type="text" id="t" value="请输入" onfocus="f1();" onblur="f2();">
+	<p>李大帅</p>
+	<input type="text" id="r">
+	<p id="show"></p>
+	<script>
+	// window.onload = function(){
+	// 	alert('我一眼就看出你不是人');
+	// }
+
+	function f1(){
+		document.getElementById('t').value = '';
+	}
+
+	function f2(){
+		var t = document.getElementById('t').value;
+		alert(t);
+	}
+	</script>
+
+	<script>
+	var t = '2020-12-12';
+	var time = new Date(t);
+	var v = (time - Date.now()) / (1000*60*60*24);
+	// console.log(v);
+	document.getElementsByTagName('p')[0].style.fontSize = '30px';
+
+
+	document.getElementById('r').oninput = function(){
+		var c = document.getElementById('r').value;
+		console.log(c);
+		document.getElementById('show').innerHTML = c;
+	}
+	
+	</script>
+</body>
+</html>

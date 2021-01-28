@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function A(){
+		this.age = 20;
+	}
+	A.prototype.say = function(){
+		console.log('hello');
+	}
+	var obj_a = new A();
+	console.log(obj_a.age);
+	obj_a.say();
+
+	function B(){
+		this.sex = '男';
+		this.age = 10;
+	}
+	B.prototype.walk = function(){
+		console.log('走起');
+	}
+	B.prototype = new A();
+	var b = new B();
+	console.log(b.age)
+	</script>
+</body>
+</html>

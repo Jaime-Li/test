@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//匹配后面字符位10的win
+	var str = 'win7 win8 win10 win10';
+	var res = str.match(/win(?=10)/g);
+	console.log(res);	//['win','win']
+
+	//特殊写法，正向预查	^开始符
+	// /^(?=abc)\d/
+	//正向否定预查
+	//匹配后面不为 10 的 win
+	var str = 'win7 win8 win10';
+	var res = str.match(/win(?!10)/g);
+	console.log(res);	//['win','win']
+
+	//方向预查
+	//(?<=)	(?<!)	ES9支持 
+	</script>
+
+	<script>
+	var arr = [
+			'img/212121/a.jpg',
+			'img/323232/b.png',
+			'image/33333/a.jpg',
+			'image/43434/b.png',
+			'212121/c.png',
+			'32323/c.pdf'
+	];
+
+	//匹配img开头的图片
+	//	/^img/	/.*/	/\.(jpg|png|gif|jpeg)$/
+	//	/^img.*\.(jpg|png|gif|jpeg)$/i
+	
+	var pattern = /^img.*\.(jpg|png|gif|jpeg)$/i;
+	for(var i in arr){
+		// var res = arr[i].match(pattern);	//返回数组或者null
+		var res = pattern.test(arr[i]);		//返回true false
+		if(res){
+			console.log(arr[i]);
+		}
+	}
+
+	//匹配不以image开头的图片	否定预查:?!
+	//	/^(?!image)/	/.*/	/\.(jpg|png|gif|jpeg)$/
+	//	/^(?!image).*\.(jpg\png\gif\jpeg)$/i
+	var pattern = /^(?!image).*\.(jpg|png|gif|jpeg)$/i;
+	for(var i in arr){
+		var res = pattern.test(arr[i]);
+		if(res){
+			console.log(arr[i]);
+		}
+	}
+
+
+	//匹配div2 以及 其中的内容
+	var html = '<div id="div1"><div id="div2">come and get some!..</div></div>';
+
+	//非贪婪匹配
+	var pattern = /<div id="div2">.*?<\/div>/;
+	var res = html.match(pattern);
+
+	//match方法，会将子表达式的结果，也放在结果数组中
+	//match  返回结果：特点：不加全局修饰符 g ，结果包含表达式结果，
+	//			加全局修饰符 g ，不包含子表达式结果
+	var pattern = /<div id="div2">(.*?)<\/div>/;
+	var res = html.match(pattern);
+
+	console.log(res[1]);
+	</script>
+</body>
+</html>

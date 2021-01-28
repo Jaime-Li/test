@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="发射">
+   <script>
+       document.getElementsByTagName('input')[0].onclick = function(){
+           var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function(){
+               if(xhr.readyState == 4){
+                   alert(xhr.responseText);
+               }
+           }
+            //发送cors简单请求
+            //xhr.open('get','http://127.0.0.1:9000/getcors');
+
+            //需预检请求  方法  请求头  请求数据类型
+            xhr.open('delete','http://127.0.0.1:9000/getcors');
+
+            xhr.send();
+       }
+   </script>
+</body>
+</html>

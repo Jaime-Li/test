@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    姓名：<input type="text" name="names" id="names">
+
+    <script>
+        document.getElementById('names').onblur = function(){
+            //发送http请求
+            var xhr = new XMLHttpRequest();
+            xhr.open('get','http://127.0.0.1:8000/gets');
+
+            xhr.setRequestHeader('content-type','enctype/form-data');
+
+            xhr.send();
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    alert(xhr.responseText);
+                    alert(xhr.status);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

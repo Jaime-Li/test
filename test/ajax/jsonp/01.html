@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // jsonp核心原理，利用src属性发送请求，服务器返回js代码前端页面写好的函数
+        function backFun(backData){
+            alert(backData);
+        }
+        function ff(backData){
+            alert(backData);
+        }
+    </script>
+    <!-- 原始jsonp核心使用方式 -->
+    <script src="http://127.0.0.1:9000/"></script>
+
+    <!-- 将函数名作为参数传入服务器
+         服务器接收函数名，直接返回调用，后台服务器不再关心函数名，只接受参数即可 -->
+    <script src="http://127.0.0.1:9000/getjson?callback=backFun"></script>
+    <script src="http://127.0.0.1:9000/getjson?callback=ff"></script>
+</body>
+</html>

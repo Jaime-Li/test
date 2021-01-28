@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<input type="button" id="btn" value="点我">
+
+	<script>
+		$(function(){
+			$('#btn').click(function(evt){
+				console.log(evt);
+
+				//阻止事件冒泡
+				evt.stopPropagation();
+			})
+		})
+	</script>
+</body>
+</html>

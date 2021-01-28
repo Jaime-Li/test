@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+		}
+		.imgs{
+			width: 500px;
+			height: 300px;
+			overflow: hidden;
+		}
+		.dots{
+			width: 164px;
+			position: absolute;
+			left: 220px;
+			top: 270px;
+			z-index: 999;
+		}
+		.dot{
+			width: 10px;
+			height: 10px;
+			border:2px solid #fff;
+			border-radius: 10px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="sq">
+		<ul class="imgs" id="imgs">
+			<li class="img">
+				<img src="../img/01.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/02.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/03.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/04.jpg" alt="">
+			</li>
+			<li class="img">
+				<img src="../img/05.jpg" alt="">
+			</li>
+		</ul>
+		<ul class="dots">
+			<li class="dot" style="background-color: #fff"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+			<li class="dot"></li>
+		</ul>
+	</div>
+	
+	<img src="../img/01.jpg" onclick="this.src='../img/02.jpg'" alt="">
+	<script>
+		// 方法1：
+		// setInterval(function(){
+		// 	var ul = document.getElementById('imgs');
+		// 	var li = document.querySelectorAll('.img')[0];
+
+		// 	ul.appendChild(li);
+		// },3000)
+		// 
+		// 方法2：
+		// var num = 0;
+
+		// setInterval(function(){
+		// 	num++;
+
+		// 	var img = document.querySelectorAll('.img');;
+		// 	var dot = document.querySelectorAll('.dot');
+			
+		// 	for(var i=0;i<img.length;i++){
+		// 		img[i].style.display = 'none';
+		// 		dot[i].style.backgroundColor = '';
+		// 	}
+
+		// 	if(num == img.length){
+		// 		num = 0;
+		// 	}
+		// 	console.log(num);
+		// 	img[num].style.display = 'block';
+		// 	dot[num].style.backgroundColor = 'white';
+		// },1000);
+		// 
+		// 方法3：
+		var dot = document.querySelectorAll('.dot');
+		for(var i=0;i<dot.length;i++){
+			(function(i){
+					dot[i].onmouseover = function(){
+					var img = document.querySelectorAll('.img');
+					for(var j=0;j<img.length;j++){
+						img[j].style.dispaly = 'none';
+						dot[j].style.backgroundColor = '';
+					}
+					this.style.backgroundColor = 'white';
+					console.log(i);
+					img[i].style.display = 'block';
+				}
+			})(i);
+			
+		}
+	</script>
+</body>
+</html>

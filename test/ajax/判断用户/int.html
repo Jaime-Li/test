@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" id="txt">
+    <span id="s"></span>
+
+    <script>
+        var txt = document.getElementById('txt');
+        txt.onblur = function(){
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(xml.readyState == 4){
+                    if(xml.responseText == 1){
+                        var h = "<font color='red'>不可用</font>"
+                        document.getElementById('s').innerHTML = h;
+                    }else{
+                        var h = "<font color='green'>可用</font>"
+                        document.getElementById('s').innerHTML = h;
+                    }
+                }
+            }
+            xml.open('post','http://127.0.0.1:8080/getname');
+            xml.send('name='+txt.value);
+        }
+
+    </script>
+</body>
+</html>
